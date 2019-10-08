@@ -21,4 +21,9 @@ public class FoxyBrainController {
 	public String getTestData1(){
 		return foxyBrainService.testData();
 	}
+	
+	@RequestMapping("/test-data")
+	public String gettestDaoData(){
+		return foxyBrainService.testDao();
+	}
 }
