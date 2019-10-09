@@ -19,8 +19,8 @@ public class FoxyBrainService {
 		return "Greeting for Foxy Brain from Service layer";
 	}
 	
-	public String testDao(){
-		List<Test> data = foxyBrainRepository.findAll();
-		return data.get(0).getMessage();
-	}
+//	public String testDao(){
+//		List<Test> data = foxyBrainRepository.findAll();
+//		return data.get(0).getMessage();
+//	}
 }
