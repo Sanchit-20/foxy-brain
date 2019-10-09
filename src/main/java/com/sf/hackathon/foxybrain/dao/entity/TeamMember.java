@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "USER_STRESS_INFO")
+@Table(name = "TEAM_MEMBER")
 @EntityListeners(AuditingEntityListener.class)
 public class TeamMember {
 
@@ -149,7 +149,5 @@ public class TeamMember {
 	public void setScrumTeam(String scrumTeam) {
 		this.scrumTeam = scrumTeam;
 	}
-	
-	
 	
 }
