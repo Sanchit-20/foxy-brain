@@ -43,7 +43,7 @@ public class StressLevelServiceImpl implements StressLevelService {
 		userStressInfo.setStressScore(userStressInfoDTO.getStressScore());
 		userStressInfo.setDateTime(userStressInfoDTO.getDateTime());
 		userStressInfo.setStressCategory(category);
-		userStressInfo.setTeamId(teamMemberRepository.findByEmailId(userStressInfoDTO.getEmailId()).getScrum_Team__c());
+		userStressInfo.setTeamId(teamMemberRepository.findByEmailId(userStressInfoDTO.getEmailId()).getScrumTeam());
 
 		foxyBrainRepository.save(userStressInfo);
 		
