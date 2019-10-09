@@ -1,29 +1,28 @@
 package com.sf.hackathon.foxybrain.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sf.hackathon.foxybrain.service.FoxyBrainService;
+import com.sf.hackathon.foxybrain.dto.UserStressInfoDTO;
+import com.sf.hackathon.foxybrain.service.StressLevelService;
+
 
 @RestController
+@RequestMapping("/api/stress")
 public class FoxyBrainController {
 
 	@Autowired
-	private FoxyBrainService foxyBrainService;
+	private StressLevelService stressLevelService;
 	
-	@RequestMapping("/test")
-	public String getTestData(){
-		return "Hello Foxy Brains";
-	}
+	@PostMapping
+	public String updateStressInfo(@RequestBody UserStressInfoDTO userStressInfoDTO) {
 	
-	@RequestMapping("/test-service")
-	public String getTestData1(){
-		return foxyBrainService.testData();
+		return stressLevelService.updateStressInfo(userStressInfoDTO);
 	}
+
 	
-	@RequestMapping("/test-data")
-	public String gettestDaoData(){
-		return foxyBrainService.testDao();
-	}
+	
 }
