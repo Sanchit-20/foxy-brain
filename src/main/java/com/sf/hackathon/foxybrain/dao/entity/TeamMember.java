@@ -5,6 +5,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -13,6 +16,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name = "USER_STRESS_INFO")
 @EntityListeners(AuditingEntityListener.class)
 public class TeamMember {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	@Column(name="Active__c")
 	private boolean active;
@@ -46,6 +53,15 @@ public class TeamMember {
 
 	@Column(name="Scrum_Team__c	", length=18)
 	private String scrum_Team__c;
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public boolean isActive() {
 		return active;
