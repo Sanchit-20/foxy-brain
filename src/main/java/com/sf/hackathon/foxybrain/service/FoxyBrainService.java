@@ -16,7 +16,7 @@ public class FoxyBrainService {
 	@Autowired
 	private FoxyBrainRepository foxyBrainRepository;
 	public String testData(){
-		return "Greeting Foxy Brain from Service layer";
+		return "Greeting for Foxy Brain from Service layer";
 	}
 	
 	public String testDao(){
