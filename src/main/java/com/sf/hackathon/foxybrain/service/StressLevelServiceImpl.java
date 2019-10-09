@@ -1,6 +1,8 @@
 package com.sf.hackathon.foxybrain.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.sf.hackathon.foxybrain.constant.FoxyBrainConstant;
 import com.sf.hackathon.foxybrain.dao.FoxyBrainRepository;
@@ -8,6 +10,8 @@ import com.sf.hackathon.foxybrain.dao.TeamMemberRepository;
 import com.sf.hackathon.foxybrain.dao.entity.UserStressInfo;
 import com.sf.hackathon.foxybrain.dto.UserStressInfoDTO;
 
+@Component
+@Service
 public class StressLevelServiceImpl implements StressLevelService {
 
 	private UserStressInfo userStressInfo;
