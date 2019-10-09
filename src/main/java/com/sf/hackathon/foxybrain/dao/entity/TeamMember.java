@@ -20,7 +20,7 @@ public class TeamMember {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@Column(name="Active__c")
 	private boolean active;
 	
@@ -53,6 +53,15 @@ public class TeamMember {
 
 	@Column(name="Scrum_Team__c	", length=18)
 	private String scrum_Team__c;
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public boolean isActive() {
 		return active;
