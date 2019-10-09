@@ -48,7 +48,7 @@ public class TeamMember {
 	@Column(name="RecordTypeId", length=18)
 	private String recordTypeId	;
 	
-	@Column(name="Scrum_Team_Name__c", length=18)
+	@Column(name="Scrum_Team_Name__c", length=1300)
 	private String scrumTeamName;
 
 	@Column(name="Scrum_Team__c	", length=18)
