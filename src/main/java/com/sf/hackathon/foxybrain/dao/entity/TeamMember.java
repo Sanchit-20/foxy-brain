@@ -27,7 +27,7 @@ public class TeamMember {
 	@Column(name="CreatedDate")
 	private Date createdDate;
 	
-	@Column(name="External_Email__c	", length=80)
+	@Column(name="Internal_Email__c	", length=80)
 	private String emailId;
 	
 	@Column(name="External_ID__c", length=50)
