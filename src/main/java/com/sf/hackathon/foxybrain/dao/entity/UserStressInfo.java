@@ -9,12 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 @Entity
-@Table(name = "USER_STRESS_INFO")
+@Table(name = "Stress_Info__c")
 @EntityListeners(AuditingEntityListener.class)
 public class UserStressInfo {
 
@@ -26,15 +28,16 @@ public class UserStressInfo {
 	private String emailId;
 	
 	@Column(name="Stress_Score__c")
-	private Long stressScore;
+	private double stressScore;
 	
 	@Column(name="Date_Of_Scan__c", length=50)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateTime;
 	
-	@Column(name="Team__c", length=50)
+	@Column(name="Team__c", length=18)
 	private String teamId;
 	
-	@Column(name="Stress_Category__c", length=50)
+	@Column(name="Stress_Category__c", length=255)
 	private String stressCategory;
 
 	public Long getId() {
@@ -53,7 +56,7 @@ public class UserStressInfo {
 		this.emailId = emailId;
 	}
 
-	public Long getStressScore() {
+	public double getStressScore() {
 		return stressScore;
 	}
 
