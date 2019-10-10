@@ -45,7 +45,7 @@ public class StressLevelServiceImpl implements StressLevelService {
 		} else {
 			category = FoxyBrainConstant.EXTREME_STRESS;
 		}
-		
+		userStressInfo = new UserStressInfo();
 		TeamMember teamMember = teamMemberRepository.findByEmailId(userStressInfoDTO.getEmailId());
 
 		logger.info("Team Member: "+ teamMember);
