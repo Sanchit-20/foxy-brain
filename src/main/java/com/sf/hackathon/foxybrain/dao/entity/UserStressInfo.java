@@ -21,7 +21,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class UserStressInfo {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false, length = 18)
 	private Long id;
 	
 	@Column(name="EMAILID", length=50)
