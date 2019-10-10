@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "TEAM_MEMBER")
+@Table(name = "adm_scrum_team_member__c")
 @EntityListeners(AuditingEntityListener.class)
 public class TeamMember {
 
