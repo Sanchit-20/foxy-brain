@@ -25,7 +25,7 @@ public class StressLevelServiceImpl implements StressLevelService {
 	public String updateStressInfo(UserStressInfoDTO userStressInfoDTO) {
 		// TODO Auto-generated method stub
 
-		Long score = userStressInfoDTO.getStressScore();
+		double score = userStressInfoDTO.getStressScore();
 		String category;
 		if (score < 20) {
 			category = FoxyBrainConstant.NO_STRESS;
