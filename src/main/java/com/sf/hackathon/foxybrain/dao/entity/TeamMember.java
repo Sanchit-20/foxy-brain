@@ -24,6 +24,9 @@ public class TeamMember {
 	@Column(name="Active__c")
 	private boolean active;
 	
+	@Column(name="sfid")
+	private String sfid;
+	
 	@Column(name="CreatedDate")
 	private Date createdDate;
 	
@@ -149,5 +152,15 @@ public class TeamMember {
 	public void setScrumTeam(String scrumTeam) {
 		this.scrumTeam = scrumTeam;
 	}
+
+	public String getSfid() {
+		return sfid;
+	}
+
+	public void setSfid(String sfid) {
+		this.sfid = sfid;
+	}
+
+	
 	
 }

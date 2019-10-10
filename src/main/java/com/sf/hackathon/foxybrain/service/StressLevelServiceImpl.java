@@ -1,5 +1,7 @@
 package com.sf.hackathon.foxybrain.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.sf.hackathon.foxybrain.constant.FoxyBrainConstant;
 import com.sf.hackathon.foxybrain.dao.FoxyBrainRepository;
 import com.sf.hackathon.foxybrain.dao.TeamMemberRepository;
+import com.sf.hackathon.foxybrain.dao.entity.TeamMember;
 import com.sf.hackathon.foxybrain.dao.entity.UserStressInfo;
 import com.sf.hackathon.foxybrain.dto.UserStressInfoDTO;
 
@@ -38,12 +41,15 @@ public class StressLevelServiceImpl implements StressLevelService {
 		} else {
 			category = FoxyBrainConstant.EXTREME_STRESS;
 		}
+		
+		TeamMember teamMember = teamMemberRepository.findByEmailId(userStressInfoDTO.getEmailId());
 
 		userStressInfo.setEmailId(userStressInfoDTO.getEmailId());
 		userStressInfo.setStressScore(userStressInfoDTO.getStressScore());
-		userStressInfo.setDateTime(userStressInfoDTO.getDateTime());
+		userStressInfo.setDateTime(new Date());
 		userStressInfo.setStressCategory(category);
-		userStressInfo.setTeamId(teamMemberRepository.findByEmailId(userStressInfoDTO.getEmailId()).getScrumTeam());
+		userStressInfo.setTeamId(teamMember.getScrumTeam());
+		userStressInfo.setTeamMember(teamMember.getSfid());
 
 		foxyBrainRepository.save(userStressInfo);
 		
