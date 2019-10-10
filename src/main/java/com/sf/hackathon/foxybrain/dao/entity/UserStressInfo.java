@@ -27,6 +27,10 @@ public class UserStressInfo {
 	@Column(name="EMAILID", length=50)
 	private String emailId;
 	
+	@Column(name="Team_Member__c", length=50)
+	private String teamMember;
+	
+	
 	@Column(name="Stress_Score__c")
 	private double stressScore;
 	
@@ -60,7 +64,7 @@ public class UserStressInfo {
 		return stressScore;
 	}
 
-	public void setStressScore(Long stressScore) {
+	public void setStressScore(double stressScore) {
 		this.stressScore = stressScore;
 	}
 
@@ -86,6 +90,14 @@ public class UserStressInfo {
 
 	public void setStressCategory(String stressCategory) {
 		this.stressCategory = stressCategory;
+	}
+
+	public String getTeamMember() {
+		return teamMember;
+	}
+
+	public void setTeamMember(String teamMember) {
+		this.teamMember = teamMember;
 	}
 	
 
