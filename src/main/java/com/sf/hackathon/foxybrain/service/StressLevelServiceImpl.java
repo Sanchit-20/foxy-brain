@@ -2,11 +2,14 @@ package com.sf.hackathon.foxybrain.service;
 
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.sf.hackathon.foxybrain.constant.FoxyBrainConstant;
+import com.sf.hackathon.foxybrain.controller.FoxyBrainController;
 import com.sf.hackathon.foxybrain.dao.FoxyBrainRepository;
 import com.sf.hackathon.foxybrain.dao.TeamMemberRepository;
 import com.sf.hackathon.foxybrain.dao.entity.TeamMember;
@@ -17,6 +20,7 @@ import com.sf.hackathon.foxybrain.dto.UserStressInfoDTO;
 @Service
 public class StressLevelServiceImpl implements StressLevelService {
 
+	Logger logger = LoggerFactory.getLogger(StressLevelServiceImpl.class);
 	private UserStressInfo userStressInfo;
 
 	@Autowired
@@ -44,6 +48,7 @@ public class StressLevelServiceImpl implements StressLevelService {
 		
 		TeamMember teamMember = teamMemberRepository.findByEmailId(userStressInfoDTO.getEmailId());
 
+		logger.info("Team Member: "+ teamMember);
 		userStressInfo.setEmailId(userStressInfoDTO.getEmailId());
 		userStressInfo.setStressScore(userStressInfoDTO.getStressScore());
 		userStressInfo.setDateTime(new Date());
