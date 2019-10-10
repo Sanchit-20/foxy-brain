@@ -25,16 +25,16 @@ public class UserStressInfo {
 	@Column(name="EMAILID", length=50)
 	private String emailId;
 	
-	@Column(name="STRESSSCORE")
+	@Column(name="Stress_Score__c")
 	private Long stressScore;
 	
-	@Column(name="DATETIME", length=50)
+	@Column(name="Date_Of_Scan__c", length=50)
 	private Date dateTime;
 	
-	@Column(name="TEAMID", length=50)
+	@Column(name="Team__c", length=50)
 	private String teamId;
 	
-	@Column(name="STRESSCATEGORY", length=50)
+	@Column(name="Stress_Category__c", length=50)
 	private String stressCategory;
 
 	public Long getId() {
